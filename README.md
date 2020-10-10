@@ -1,24 +1,7 @@
-# ucc-test-frontend
+## Demo
+[Demo](https://abulaiz.my.id/vehicletool)
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## How to run locally
+- Install node modules first using _npm install_
+- Set API end point on .env file in VUE_APP_PRODUCTION_API variable, for example 
+- Serve application using _npm run server_ 
