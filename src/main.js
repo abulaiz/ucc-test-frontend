@@ -8,7 +8,7 @@ Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 Vue.prototype.$api_path = (() => {
 	let url = `api/${process.env.VUE_APP_API_VERSION}`
-	if(!process.env.NODE_ENV == "development")
+	if(process.env.NODE_ENV != "development")
 		url = `${process.env.VUE_APP_PRODUCTION_API}/${url}`
 	return url;
 })();
