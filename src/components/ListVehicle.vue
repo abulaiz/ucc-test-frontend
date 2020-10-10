@@ -2,7 +2,7 @@
 	<v-card>
 		<!-- List Option -->
 		<v-row style="padding: 10px;">
-			<v-col cols="4">
+			<v-col cols="12" sm="4">
 		        <v-select
 		          :items="master.engine_displacement"
 		          item-text="text"
@@ -12,7 +12,7 @@
 		          class="ma-0 pa-0"
 		        ></v-select>				
 			</v-col>
-			<v-col cols="4">
+			<v-col cols="12" sm="4">
 		        <v-select
 		          :items="master.engine_power"
 		          item-text="text"
@@ -22,7 +22,7 @@
 		          class="ma-0 pa-0"
 		        ></v-select>				
 			</v-col>
-			<v-col cols="4">
+			<v-col cols="12" sm="4">
 				<v-text-field
 					label="Search by plat number, name, or place"
 					single-line
@@ -90,7 +90,7 @@ export default {
 		vehicles: [],
 		onLoadData: false
 	}),
-	props: ['engineDisplacementOption', 'enginePowerOption'],
+	props: ['engineDisplacementOption', 'enginePowerOption', 'refreshStatus'],
 	methods: {
 		loadVehicles(fresh = false){
 			if(fresh)
@@ -152,6 +152,12 @@ export default {
 		this.watchOption()	
 
 		document.getElementsByTagName('body')[0].onscroll = this.watchScrolledWindow
+	},
+	watch: {
+		refreshStatus(newVal){
+			if(newVal)
+				this.loadVehicles(true)
+		}
 	}
 }
 </script>
